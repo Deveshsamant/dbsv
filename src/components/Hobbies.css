@@ -1,0 +1,959 @@
+/* ===== HOBBIES PAGE SPECIFIC STYLES ===== */
+
+/* Hobbies Hero Section */
+.hobbies-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 8rem 2rem 4rem;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    overflow: hidden;
+}
+
+.hobbies-hero .hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hobbies-hero .hero-title {
+    margin-bottom: 2rem;
+}
+
+.hobbies-hero .title-main {
+    display: block;
+    font-family: 'Orbitron', monospace;
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hobbies-hero .title-subtitle {
+    display: block;
+    font-size: 1.25rem;
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+
+.hobbies-hero .hero-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hobbies Content */
+.hobbies-content {
+    padding: 4rem 2rem;
+    background: var(--bg-primary);
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+}
+
+.hobby-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: 0;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hobby-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+    z-index: 10;
+}
+
+.hobby-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+    border-color: var(--accent-primary);
+}
+
+.hobby-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Game Background Images */
+.hobby-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.game-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.hobby-card:hover .game-bg {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(0, 212, 255, 0.3) 0%, 
+        rgba(139, 69, 19, 0.2) 50%, 
+        rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0.8;
+    transition: opacity var(--transition-normal);
+}
+
+.hobby-card:hover .image-overlay {
+    opacity: 0.6;
+}
+
+/* Card Content */
+.hobby-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 2rem 2rem 0;
+}
+
+.hobby-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+.hobby-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hobby-actions {
+    padding: 0 2rem 2rem;
+}
+
+.hobby-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.hobby-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hobby-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.hobby-title h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.hobby-title p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: var(--radius-lg);
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+}
+
+.status-indicator i {
+    color: #10b981;
+    animation: pulse 2s infinite;
+}
+
+.hobby-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(0, 212, 255, 0.08);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.hobby-card:hover .stat-item::before {
+    left: 100%;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 212, 255, 0.12);
+    border-color: var(--accent-primary);
+}
+
+.stat-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    transition: all var(--transition-normal);
+}
+
+.stat-item:hover .stat-value {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px var(--accent-primary);
+}
+
+.stat-value.loading {
+    opacity: 0.6;
+    animation: pulse 1.5s infinite;
+}
+
+.stat-value.error {
+    color: #f59e0b;
+}
+
+/* Game-specific card styling */
+.chess-card .hobby-icon {
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+}
+
+.valorant-card .hobby-icon {
+    background: linear-gradient(135deg, #FF4655 0%, #FD4556 100%);
+}
+
+.clash-royale-card .hobby-icon {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.chess-card:hover {
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+}
+
+.valorant-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 70, 85, 0.3);
+}
+
+.clash-royale-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hobby-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: var(--radius-lg);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.username, .platform, .last-updated {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.username i, .platform i, .last-updated i {
+    color: var(--accent-primary);
+}
+
+.hobby-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hobby-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.hobby-btn:not(.secondary) {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+}
+
+.hobby-btn:not(.secondary):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.hobby-btn.secondary {
+    background: transparent;
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+}
+
+.hobby-btn.secondary:hover {
+    background: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+/* Chess Card Specific Styles */
+.chess-card {
+    border-left: 4px solid #f7d794;
+}
+
+.chess-card .hobby-icon {
+    background: linear-gradient(135deg, #f7d794 0%, #f39c12 100%);
+}
+
+/* Valorant Card Specific Styles */
+.valorant-card {
+    border-left: 4px solid #ff6b6b;
+}
+
+.valorant-card .hobby-icon {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+/* Gaming Info Section */
+.gaming-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.info-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.info-card h3 {
+    font-family: 'Orbitron', monospace;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card li {
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.info-card li:before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+}
+
+.info-card li:last-child {
+    border-bottom: none;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Error States */
+.error {
+    color: #ef4444 !important;
+}
+
+.offline {
+    color: #f59e0b !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .hobby-card {
+        padding: 1.5rem;
+    }
+    
+    .hobby-stats {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .hobby-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .hobby-actions {
+        flex-direction: column;
+    }
+    
+    .hobby-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .status-indicator {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .hobbies-hero {
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .hobbies-hero .title-main {
+        font-size: 2.5rem;
+    }
+    
+    .hobbies-content {
+        padding: 3rem 1rem;
+    }
+    
+    .hobby-header-left {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .hobby-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .hobby-image {
+        height: 120px;
+    }
+    
+    .gaming-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Enhanced Card Animations */
+.hobby-card {
+    animation: cardSlideIn 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.chess-card {
+    animation-delay: 0.1s;
+}
+
+.valorant-card {
+    animation-delay: 0.3s;
+}
+
+.clash-royale-card {
+    animation-delay: 0.5s;
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Smooth Transitions */
+.stat-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hobby-btn {
+    transition: all 0.3s ease;
+}
+
+.hobby-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+/* ===== STATS MODAL STYLES ===== */
+.stats-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.stats-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    margin: auto;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.modal-header h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all var(--transition-normal);
+}
+
+.modal-close:hover {
+    color: var(--accent-primary);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.modal-content {
+    height: calc(90vh - 100px);
+    overflow-y: auto;
+}
+
+/* Stats Tabs */
+.stats-tabs {
+    display: flex;
+    background: var(--bg-primary);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    color: var(--accent-primary);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+}
+
+/* Tab Panels */
+.tab-content {
+    position: relative;
+}
+
+.tab-panel {
+    display: none;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.overview-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: all var(--transition-normal);
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.2);
+    border-color: var(--accent-primary);
+}
+
+.overview-card .overview-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.overview-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', monospace;
+}
+
+.overview-info div {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+
+
+/* History Timeline */
+.history-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.history-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gradient-primary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.timeline-date {
+    color: var(--accent-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.timeline-content h5 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', monospace;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: all var(--transition-normal);
+    opacity: 0.6;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card.earned {
+    opacity: 1;
+    border-color: var(--accent-primary);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+}
+
+.achievement-card.earned::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.achievement-card.earned .achievement-icon {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.achievement-info h5 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', monospace;
+}
+
+.achievement-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* View Button Styles */
+.hobby-btn.view-btn {
+    background: var(--gradient-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--accent-secondary);
+}
+
+.hobby-btn.view-btn:hover {
+    background: var(--gradient-primary);
+    border-color: var(--accent-primary);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Mobile Modal Styles */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .modal-header {
+        padding: 1rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .tab-panel {
+        padding: 1rem;
+    }
+    
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
